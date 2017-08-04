@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #text {
+
+    resize: none;
+
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    <div>
+        <h2>Записи в книге</h2>
+        {% for item in posts%}
+            <h4>{{ item.username }}</h4>
+            <p>{{ item.msg }}</p>
+        {% endfor %}
+        <hr>
+    </div>
+    <div class="form-row">
+
+
+    <form name="new_post" method="post">
+        <input type="text" placeholder="Имя" name="username">
+        <p></p>
+        <textarea placeholder="Текст сообщения" name="msg" rows="6" cols="20" id="text"></textarea>
+        <p></p>
+        {% csrf_token %}
+        <button type="submit" onclick="" >Отправить</button>
+    </form>
+    </div>
+</body>
+</html>
